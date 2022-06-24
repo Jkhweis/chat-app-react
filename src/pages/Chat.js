@@ -1,3 +1,3 @@
 export default function Chat() {
-  return <div>testing</div>;
+  return <div>testing...Hi!</div>;
 }
