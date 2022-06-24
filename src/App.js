@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { UserAuth } from './context/AuthContext';
 
 //comps
 import Navbar from './comps/Navbar';
-import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import Chat from './pages/Chat';
 
@@ -10,14 +10,18 @@ import Chat from './pages/Chat';
 import './App.css';
 
 function App() {
+  const { user } = UserAuth();
+
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/signin" element={<SignIn />} />
+          <Route
+            path="/"
+            element={!user ? <SignIn /> : <Navigate to="/chat" />}
+          />
+          <Route path="/chat" element={user ? <Chat /> : <Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
     </div>

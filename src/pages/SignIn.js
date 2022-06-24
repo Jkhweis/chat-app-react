@@ -1,4 +1,3 @@
-import { auth } from '../firebase/config.js';
 import { GoogleButton } from 'react-google-button';
 import { UserAuth } from '../context/AuthContext';
 
@@ -15,7 +14,7 @@ export default function SignIn() {
 
   return (
     <div>
-      <h1>Sign in</h1>
+      <h1>Welcome to the Dojo Chat!</h1>
       <GoogleButton onClick={handleGoogleSignIn} />
     </div>
   );

@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 
-export default function Navbar() {
+const Navbar = () => {
   const { user, logOut } = UserAuth();
 
   const handleLogout = async () => {
@@ -14,12 +13,14 @@ export default function Navbar() {
 
   return (
     <div>
-      <h1>Navbar</h1>
-      {user ? (
+      <h3>Navbar</h3>
+      {user?.displayName ? (
         <button onClick={handleLogout}>Logout</button>
       ) : (
-        <Link to="/signin">Sign in</Link>
+        <p>Welcome! Please sign in below</p>
       )}
     </div>
   );
-}
+};
+
+export default Navbar;
