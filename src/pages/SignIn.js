@@ -1,13 +1,22 @@
 import { auth } from '../firebase/config.js';
+import { GoogleButton } from 'react-google-button';
+import { UserAuth } from '../context/AuthContext';
 
-export default function SignUp() {
-  function signInWithGoogle() {
-    const provider = new auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
-  }
+export default function SignIn() {
+  const { googleSignIn } = UserAuth();
 
-  return;
-  <div>
-    <button onClick={signInWithGoogle}>Sign In With Google</button>
-  </div>;
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return (
+    <div>
+      <h1>Sign in</h1>
+      <GoogleButton onClick={handleGoogleSignIn} />
+    </div>
+  );
 }
