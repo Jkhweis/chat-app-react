@@ -2,11 +2,12 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { UserAuth } from './context/AuthContext';
 
 //comps
-import Navbar from './comps/Navbar';
+import Navibar from './comps/Navibar';
 import SignIn from './pages/SignIn';
 import Chat from './pages/Chat';
 
 //styles
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        <Navibar />
         <Routes>
           <Route
             path="/"
