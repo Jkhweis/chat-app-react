@@ -1,0 +1,12 @@
+.chat-list {
+  padding: 0;
+}
+
+.indv-chat {
+  border-radius: 30px;
+  background-color: #ffffff;
+  list-style-type: none;
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+}

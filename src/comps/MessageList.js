@@ -1,16 +1,26 @@
-export default function BookList({ messages }) {
+//styles
+import './MessageList.css';
+
+export default function MessageList({ messages }) {
   const handleClick = async (id) => {
     console.log(id);
   };
 
   return (
-    <div className="book-list">
-      <ul>
+    <div>
+      <ul className="chat-list">
         {messages.map((message) => (
-          <li key={message.id} onClick={() => handleClick(message.id)}>
+          <li
+            key={message.id}
+            className="indv-chat"
+            onClick={() => handleClick(message.id)}
+          >
+            {message.displayName}
+            {'...'}
             {message.title}
           </li>
         ))}
+        <li></li>
       </ul>
     </div>
   );

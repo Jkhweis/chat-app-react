@@ -23,7 +23,7 @@ const Navibar = () => {
             Logout
           </Button>
         ) : (
-          <p>Hello there!</p>
+          <></>
         )}
       </Container>
     </Navbar>

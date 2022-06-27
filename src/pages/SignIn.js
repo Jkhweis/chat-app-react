@@ -16,7 +16,7 @@ export default function SignIn() {
   };
 
   return (
-    <div>
+    <div className="sign-in">
       <h1>Welcome to the Chat!</h1>
       <GoogleButton className="signin-btn" onClick={handleGoogleSignIn} />
     </div>
