@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -19,20 +19,4 @@ initializeApp(firebaseConfig);
 const db = getFirestore();
 const auth = getAuth();
 
-// collection ref
-const colRef = collection(db, 'messages');
-
-// get collection data
-getDocs(colRef)
-  .then((snapshot) => {
-    let messages = [];
-    snapshot.docs.forEach((doc) => {
-      messages.push({ ...doc.data(), id: doc.id });
-    });
-    console.log(messages);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-
-export { db, auth, getDocs };
+export { db, auth };
