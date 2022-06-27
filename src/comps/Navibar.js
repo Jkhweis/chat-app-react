@@ -16,14 +16,14 @@ const Navibar = () => {
   };
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar>
       <Container>
         {user?.displayName ? (
           <Button variant="outline-danger" onClick={handleLogout}>
             Logout
           </Button>
         ) : (
-          <p>Hello There!</p>
+          <p>Hello there!</p>
         )}
       </Container>
     </Navbar>
