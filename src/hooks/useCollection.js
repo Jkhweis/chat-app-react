@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { db } from '../firebase/config';
-import { collection, onSnapshot } from 'firebase/firestore';
+import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
 
-export const useCollection = (c) => {
+export const useCollection = (messages) => {
   const [documents, setDocuments] = useState(null);
 
   useEffect(() => {
-    let ref = collection(db, c);
+    const colRef = collection(db, 'messages');
+    const q = query(colRef, orderBy('createdAt', 'asc'));
 
-    const unsub = onSnapshot(ref, (snapshot) => {
+    const unsub = onSnapshot(q, (snapshot) => {
       let results = [];
       snapshot.docs.forEach((doc) => {
         results.push({ id: doc.id, ...doc.data() });
@@ -17,7 +18,9 @@ export const useCollection = (c) => {
     });
 
     return () => unsub();
-  }, [c]);
+  }, [messages]);
 
   return { documents };
 };
+
+//    query(colRef, where('text', '==', 'Play GoldenEye 007'));

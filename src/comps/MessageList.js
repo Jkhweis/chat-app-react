@@ -17,7 +17,7 @@ export default function MessageList({ messages }) {
           >
             {message.displayName}
             {'...'}
-            {message.title}
+            {message.text}
           </li>
         ))}
         <li></li>

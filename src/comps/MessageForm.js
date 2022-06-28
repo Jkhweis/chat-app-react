@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { db } from '../firebase/config';
+import { db, timestamp } from '../firebase/config';
 import { collection, addDoc } from 'firebase/firestore';
 import { UserAuth } from '../context/AuthContext';
 
@@ -11,10 +11,10 @@ export default function MessageForm() {
     e.preventDefault();
 
     await addDoc(collection(db, 'messages'), {
-      title: newMessage,
+      text: newMessage,
       displayName: user?.displayName,
+      createdAt: timestamp,
     });
-
     setNewMessage('');
   };
 
