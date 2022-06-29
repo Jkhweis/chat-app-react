@@ -20,7 +20,6 @@ export default function MessageList({ messages }) {
             {message.text}
           </li>
         ))}
-        <li></li>
       </ul>
     </div>
   );

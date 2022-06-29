@@ -1,9 +1,13 @@
 h1 {
   color: #e90707;
-  margin-left: -50px;
+  font-family: 'PT Serif', serif;
 }
 
 .sign-in {
   margin-top: 50px;
-  display: flex-center;
+}
+
+.signin-btn {
+  margin-top: 70px;
+  margin-left: 100px;
 }

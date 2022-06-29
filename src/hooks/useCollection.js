@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { db } from '../firebase/config';
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
 
-export const useCollection = (messages) => {
+export const useCollection = (c) => {
   const [documents, setDocuments] = useState(null);
 
   useEffect(() => {
-    const colRef = collection(db, 'messages');
+    const colRef = collection(db, c);
     const q = query(colRef, orderBy('createdAt', 'asc'));
 
     const unsub = onSnapshot(q, (snapshot) => {
@@ -18,9 +18,7 @@ export const useCollection = (messages) => {
     });
 
     return () => unsub();
-  }, [messages]);
+  }, [c]);
 
   return { documents };
 };
-
-//    query(colRef, where('text', '==', 'Play GoldenEye 007'));

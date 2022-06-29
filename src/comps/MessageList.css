@@ -3,10 +3,10 @@
 }
 
 .indv-chat {
-  border-radius: 30px;
+  border-radius: 60px;
   background-color: #ffffff;
   list-style-type: none;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 15px 10px;
+  margin: 20px;
   cursor: pointer;
 }

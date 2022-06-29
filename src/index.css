@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+
 /* variables */
 :root {
   --heading-color: #444;
@@ -20,6 +22,7 @@ body {
 
 p {
   color: var(--text-color);
+  font-family: 'PT Serif', serif;
 }
 
 label,
@@ -37,6 +40,7 @@ button {
   color: #fff;
   border: 0;
   border-radius: 10px;
-  padding: 6px 8px;
+  padding: 8px 10px;
   font-size: 20px;
+  font-family: 'PT Serif', serif;
 }
