@@ -22,9 +22,14 @@ export default function MessageList({ messages }) {
         {messages.map((message) => (
           <li key={message.id} className="sent">
             {message.text}
-            <button className="unsend" onClick={() => handleClick(message.id)}>
-              <FontAwesomeIcon icon={faTrashCan} />
-            </button>
+            {user.uid === message.createdBy.id && (
+              <button
+                className="unsend"
+                onClick={() => handleClick(message.id)}
+              >
+                <FontAwesomeIcon icon={faTrashCan} />
+              </button>
+            )}
           </li>
         ))}
       </ul>

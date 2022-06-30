@@ -13,12 +13,19 @@ export default function MessageForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const createdBy = {
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      id: user.uid,
+    };
+
     await addDoc(collection(db, 'messages'), {
       text: newMessage,
       displayName: user.displayName,
       createdAt: timestamp,
       uid: user.uid,
       photoURL: user.photoURL,
+      createdBy,
     });
     setNewMessage('');
   };
