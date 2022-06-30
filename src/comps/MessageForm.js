@@ -15,19 +15,22 @@ export default function MessageForm() {
 
     await addDoc(collection(db, 'messages'), {
       text: newMessage,
-      displayName: user?.displayName,
+      displayName: user.displayName,
       createdAt: timestamp,
+      uid: user.uid,
+      photoURL: user.photoURL,
     });
     setNewMessage('');
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="send-form" onSubmit={handleSubmit}>
       <label>
         <span></span>
         <textarea
           required
           type="text"
+          placeholder="Type your message here..."
           onChange={(e) => setNewMessage(e.target.value)}
           value={newMessage}
         />

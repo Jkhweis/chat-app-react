@@ -1,13 +1,28 @@
 h1 {
-  color: #e90707;
-  font-family: 'PT Serif', serif;
+  color: #ffffff;
+  font-family: 'Rambla', sans-serif;
+  text-align: center;
+}
+h3 {
+  color: #270505;
+  font-family: 'Rambla', sans-serif;
 }
 
-.sign-in {
-  margin-top: 50px;
+.signin-pg {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.signin-img {
+  display: flex-center;
+  margin-bottom: 15px;
 }
 
 .signin-btn {
-  margin-top: 70px;
-  margin-left: 100px;
+  margin-top: 30px;
+  margin-left: 200px;
+}
+
+img {
+  max-width: 50%;
 }

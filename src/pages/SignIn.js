@@ -3,7 +3,10 @@ import { UserAuth } from '../context/AuthContext';
 
 //styles & icons
 import './SignIn.css';
-import { GiPunchBlast } from 'react-icons/gi';
+import karate from '../images/karate.png';
+
+//animation
+import { motion } from 'framer-motion';
 
 export default function SignIn() {
   const { googleSignIn } = UserAuth();
@@ -17,10 +20,12 @@ export default function SignIn() {
   };
 
   return (
-    <div className="sign-in">
-      <h1>
-        Welcome to the Dojo Chat! <GiPunchBlast />
-      </h1>
+    <div className="signin-pg">
+      <div className="signin-img">
+        <motion.img src={karate} alt="" whileHover={{ scale: 1.05 }} />
+      </div>
+      <h1>Welcome to the Dojo!</h1>
+      <h3>Ready to Enter?</h3>
       <GoogleButton className="signin-btn" onClick={handleGoogleSignIn} />
     </div>
   );

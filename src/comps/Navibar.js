@@ -19,7 +19,7 @@ const Navibar = () => {
     <Navbar>
       <Container>
         {user?.displayName ? (
-          <Button variant="outline-danger" onClick={handleLogout}>
+          <Button variant="danger" onClick={handleLogout}>
             Logout
           </Button>
         ) : (

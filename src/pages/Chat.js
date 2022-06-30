@@ -3,13 +3,13 @@ import MessageList from '../comps/MessageList';
 import MessageForm from '../comps/MessageForm';
 import { useCollection } from '../hooks/useCollection';
 
-export default function Chat() {
+export default function Chat(props) {
   const { user } = UserAuth();
   const { documents: messages } = useCollection('messages');
 
   return (
     <div>
-      <p>Welcome, {user?.displayName}</p>
+      <p>Welcome, {user.displayName}</p>
       {messages && <MessageList messages={messages} />}
       <MessageForm />
     </div>
