@@ -9,7 +9,6 @@ import './MessageList.css';
 
 export default function MessageList({ messages }) {
   const { user } = UserAuth();
-  //const messageClass = user.displayName === 'Joy Khweis' ? 'sent' : 'received';
 
   const handleClick = async (id) => {
     const docRef = doc(db, 'messages', id);
@@ -20,7 +19,12 @@ export default function MessageList({ messages }) {
     <>
       <ul className="chat-list">
         {messages.map((message) => (
-          <li key={message.id} className="sent">
+          <li
+            key={message.id}
+            className={`${
+              user.uid === message.createdBy.id ? 'sent' : 'received'
+            }`}
+          >
             {message.text}
             {user.uid === message.createdBy.id && (
               <button
