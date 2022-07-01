@@ -6,6 +6,7 @@ import { doc, deleteDoc } from 'firebase/firestore';
 import './MessageList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { FaUserNinja } from 'react-icons/fa';
 
 //animation
 import { motion } from 'framer-motion';
@@ -30,6 +31,11 @@ export default function MessageList({ messages }) {
               }`}
               whileHover={{ scale: 1.05 }}
             >
+              <h6 className="name">
+                {message.displayName}
+                {'     '}
+                <FaUserNinja />
+              </h6>
               {message.text}
               {user.uid === message.createdBy.id && (
                 <button

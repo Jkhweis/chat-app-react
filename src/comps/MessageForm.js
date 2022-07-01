@@ -19,7 +19,7 @@ export default function MessageForm() {
     const sound = new Howl({
       src,
       html5: true,
-      volume: 0.5,
+      volume: 0.75,
     });
     sound.play();
   };
