@@ -1,11 +1,14 @@
 import { UserAuth } from '../context/AuthContext';
 import { db } from '../firebase/config';
 import { doc, deleteDoc } from 'firebase/firestore';
+
+//styles & icons
+import './MessageList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-//styles
-import './MessageList.css';
+//animation
+import { motion } from 'framer-motion';
 
 export default function MessageList({ messages }) {
   const { user } = UserAuth();
@@ -19,22 +22,25 @@ export default function MessageList({ messages }) {
     <>
       <ul className="chat-list">
         {messages.map((message) => (
-          <li
-            key={message.id}
-            className={`${
-              user.uid === message.createdBy.id ? 'sent' : 'received'
-            }`}
-          >
-            {message.text}
-            {user.uid === message.createdBy.id && (
-              <button
-                className="unsend"
-                onClick={() => handleClick(message.id)}
-              >
-                <FontAwesomeIcon icon={faTrashCan} />
-              </button>
-            )}
-          </li>
+          <div>
+            <motion.li
+              key={message.id}
+              className={`${
+                user.uid === message.createdBy.id ? 'sent' : 'received'
+              }`}
+              whileHover={{ scale: 1.05 }}
+            >
+              {message.text}
+              {user.uid === message.createdBy.id && (
+                <button
+                  className="unsend"
+                  onClick={() => handleClick(message.id)}
+                >
+                  <FontAwesomeIcon icon={faTrashCan} />
+                </button>
+              )}
+            </motion.li>
+          </div>
         ))}
       </ul>
     </>

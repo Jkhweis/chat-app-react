@@ -19,6 +19,5 @@ export const useCollection = (c) => {
 
     return () => unsub();
   }, [c]);
-
   return { documents };
 };
