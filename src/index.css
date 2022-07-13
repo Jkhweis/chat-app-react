@@ -2,8 +2,8 @@
 
 /* variables */
 :root {
-  --text-color: #ebe5d4;
-  --bg-color: #420404;
+  --text-color: #f0eaeb;
+  --chat-color: #420404;
 }
 
 /* base styles */
@@ -52,4 +52,38 @@ input {
 .send-form {
   margin-left: 40px;
   margin-bottom: 70px;
+}
+
+::-webkit-scrollbar {
+  width: 0.75em;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(355 75% 50% / 1);
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(353 100% 20% / 1);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(353 100% 10% / 1);
+}
+
+.chat {
+  background: var(--chat-color);
+  border-radius: 40px;
+  padding: 20px;
+
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  max-height: 550px;
+}
+
+.footer {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
