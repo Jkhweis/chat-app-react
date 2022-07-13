@@ -12,8 +12,8 @@ import boxingpunch from '../audio/boxingpunch.wav';
 export default function MessageForm() {
   const [newMessage, setNewMessage] = useState('');
   const { user } = UserAuth();
-  const scroll = useRef();
   const soundSrc = boxingpunch;
+  const dummy = useRef();
 
   const sendPunch = (src) => {
     const sound = new Howl({
@@ -40,7 +40,7 @@ export default function MessageForm() {
       createdBy,
     });
     setNewMessage('');
-    scroll.current.scrollIntoView({ behavior: 'smooth' });
+    dummy.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -60,6 +60,7 @@ export default function MessageForm() {
           Send <GiPunchBlast />
         </button>
       </form>
+      <span ref={dummy}></span>
     </>
   );
 }

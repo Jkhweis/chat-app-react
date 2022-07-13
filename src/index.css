@@ -26,16 +26,16 @@ p {
 label,
 label span {
   display: block;
-  margin: 6px 0;
-  color: white;
+  margin: 6px 0px;
 }
+
 input {
   padding: 6px;
   margin-bottom: 12px;
 }
 
 .send-btn {
-  background: #310101;
+  background: #861717;
   color: #fff;
   border: 0;
   border-radius: 12px;
@@ -51,7 +51,6 @@ input {
 
 .send-form {
   margin-left: 40px;
-  margin-bottom: 70px;
 }
 
 ::-webkit-scrollbar {
@@ -77,10 +76,19 @@ input {
   background: var(--chat-color);
   border-radius: 40px;
   padding: 20px;
-
   overflow-y: scroll;
   scroll-behavior: smooth;
   max-height: 550px;
+}
+
+a:link {
+  text-decoration: none;
+  color: #d81838;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #ffc0cb;
 }
 
 .footer {

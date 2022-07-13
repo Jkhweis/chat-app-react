@@ -16,7 +16,15 @@ export default function Chat(props) {
       </div>
       <footer className="footer">
         <p>
-          This website was coded by Joy Khweis and is open-sourced on Github
+          This website was coded by Joy Khweis and it is{' '}
+          <a
+            href="https://github.com/Jkhweis/chat-app-react"
+            target="_blank"
+            title="Joy Khweis Github"
+          >
+            open-sourced
+          </a>{' '}
+          on Github
         </p>
       </footer>
     </>
