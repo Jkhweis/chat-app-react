@@ -95,3 +95,12 @@ a:visited {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
+@media screen and (max-width: 600px) {
+  .App {
+    max-width: 350px;
+  }
+  .footer {
+    font-size: 12px;
+  }
+}

@@ -26,3 +26,13 @@ h3 {
 img {
   max-width: 50%;
 }
+
+@media screen and (max-width: 600px) {
+  .signin-btn {
+    margin-left: 30px;
+  }
+  .signin-pg {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}

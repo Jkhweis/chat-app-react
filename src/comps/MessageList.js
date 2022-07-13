@@ -1,7 +1,6 @@
 import { UserAuth } from '../context/AuthContext';
 import { db } from '../firebase/config';
 import { doc, deleteDoc } from 'firebase/firestore';
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 //styles & icons
 import './MessageList.css';
@@ -47,11 +46,6 @@ export default function MessageList({ messages }) {
                   <FontAwesomeIcon icon={faTrashCan} />
                 </button>
               )}
-              <p className="date">
-                {formatDistanceToNow(message.createdAt.toDate(), {
-                  addSuffix: true,
-                })}
-              </p>
             </motion.li>
           </div>
         ))}

@@ -8,7 +8,6 @@ import Chat from './pages/Chat';
 
 //styles
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 
 function App() {
   const { user } = UserAuth();
