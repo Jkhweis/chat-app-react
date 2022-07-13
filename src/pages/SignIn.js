@@ -22,7 +22,11 @@ export default function SignIn() {
   return (
     <div className="signin-pg">
       <div className="signin-img">
-        <motion.img src={karate} alt="" whileHover={{ scale: 1.05 }} />
+        <motion.img
+          src={karate}
+          alt="karate image"
+          whileHover={{ scale: 1.05 }}
+        />
       </div>
       <h1>Welcome to the Dojo!</h1>
       <h3>Ready to Enter?</h3>
